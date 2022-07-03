@@ -1,0 +1,26 @@
+version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - '# Install PHP'
+        - amazon-linux-extras install php8.0
+        - yum install --enablerepo=remi,remi-php80 php-xml -y
+        - php -v
+        - '# Install Composer'
+        - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        - php composer-setup.php ;
+        - php -r "unlink('composer-setup.php');" ;
+        - mv composer.phar /usr/local/bin/composer
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - yarn laravel:build
+        - amplifyPush --simple
+frontend:
+  artifacts:
+    baseDirectory: /dist
+    files:
+      - '**/*'
+  cache:
+    paths: []

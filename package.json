@@ -1,0 +1,9 @@
+{
+  "name": "sample-amplify-laravel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "laravel:build": ". laravel-build",
+    "laravel:remove": ". laravel-remove"
+  }
+}

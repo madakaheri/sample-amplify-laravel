@@ -1,3 +1,7 @@
-# このフックは AmplifyConsole での amplifyPush では実行されません。
+echo '# Removing laravel and artisan artifacts'
 
-yarn laravel:remove
+rm -f -r amplify/backend/function/laravel/src/*
+rm -f -r amplify/backend/function/artisan/src/*
+
+echo "*\n!/.gitignore" > amplify/backend/function/laravel/src/.gitignore
+echo "*\n!/.gitignore" > amplify/backend/function/artisan/src/.gitignore

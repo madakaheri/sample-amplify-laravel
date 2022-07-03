@@ -15,7 +15,7 @@ backend:
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'
-        - yarn laravel:build
+        - . laravel-build
         - amplifyPush --simple
 frontend:
   artifacts:

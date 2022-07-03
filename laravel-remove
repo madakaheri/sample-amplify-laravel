@@ -1,9 +1,9 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 echo '# Removing laravel and artisan artifacts'
 
 rm -f -r amplify/backend/function/laravel/src/*
 rm -f -r amplify/backend/function/artisan/src/*
 
-echo "*" > amplify/backend/function/laravel/src/.gitignore
-echo "*" > amplify/backend/function/artisan/src/.gitignore
+echo "*\n!/.gitignore" > amplify/backend/function/laravel/src/.gitignore
+echo "*\n!/.gitignore" > amplify/backend/function/artisan/src/.gitignore
